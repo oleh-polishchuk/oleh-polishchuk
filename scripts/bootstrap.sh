@@ -10,7 +10,7 @@ fi
 # ------------------- #
 
 # install Node.js
-curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+curl -sL https://deb.nodesource.com/setup_9.x | sudo bash -
 apt-get install -y nodejs
 
 # ------------------- #
@@ -52,31 +52,31 @@ server {
         gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 
         location / {
-            root /oleh-polishchuk;
+            root /usr/src/oleh-polishchuk;
             index index.html index.html;
             sendfile off;
         }
 
         location ~* \.(css)$ {
-            root /oleh-polishchuk;
+            root /usr/src/oleh-polishchuk;
             add_header Cache-Control "max-age=31536000";
             sendfile off;
         }
 
         location ~* \.(js)$ {
-            root /oleh-polishchuk;
+            root /usr/src/oleh-polishchuk;
             add_header Cache-Control "private, max-age=31536000";
             sendfile off;
         }
 
         location ~* \.(jpg|png|gif|ico|svg)$ {
-            root /oleh-polishchuk;
+            root /usr/src/oleh-polishchuk;
             add_header Cache-Control "max-age=86400";
             sendfile off;
         }
 
         location ~* \.(otf|eot|ttf|woff|woff2)$ {
-            root /oleh-polishchuk;
+            root /usr/src/oleh-polishchuk;
             sendfile off;
         }
 
